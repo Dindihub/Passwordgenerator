@@ -24,6 +24,16 @@ class User:
 
         User.user_list.remove(self)
 
+
+    @classmethod
+    def find_by_name(cls,user_name):
+        '''
+        Method that takes in a name and returns a user info that matches that name.
+        '''
+        for user in cls.user_list:
+            if user.user_name == user_name:
+                return user
+
     @classmethod
     def display_user(cls):
         '''
@@ -40,13 +50,13 @@ class Credentials:
     '''
     Class that creates new instances of credentials
     ''' 
-    accounts=[]
-    def __init__(self,account_name,account_username,account_password_):
+    account=[]
+    def __init__(self,account_username,account_name,account_password_):
         '''
         defines properties for objectself
         ''' 
-        self.account_name=account_name
-        self.account_username=account_username
+        self.account_name=account_username
+        self.account_username=account_name
         self.account_password_=account_password_
 
     def save_account(self):
@@ -64,11 +74,12 @@ class Credentials:
         Credentials.accounts.remove(self)
 
     @classmethod
-    def display_account(cls):
+    def display_account(cls,name):
         '''
         Method returns list of accounts
         '''
 
         for account in cls.accounts:
+        
                 return cls.accounts
 
