@@ -1,5 +1,4 @@
 # Password Manager
-## This is a Python application that allows a user to generate and store passwords for various accounts., 04/25/2022
 ## By Sandra Dindi
 ## Description
 This is a Python application that allows a user to generate and store passwords for various accounts. The application runs on the terminal and the user navigates through the app by using short codes. <br/>
@@ -35,5 +34,5 @@ No known bugs
 ## Technologies Used
 - Python3.8
 ### License
-MIT (c) 2017 **[Sandra Dindi](https://github.com/Dindihub/Passwordgenerator)**
+MIT (c) 2020 **[Sandra Dindi](https://github.com/Dindihub/Passwordgenerator)**
 
