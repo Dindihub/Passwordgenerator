@@ -16,6 +16,7 @@ class TestUser(unittest.TestCase):
         setup method to run before each test cases
         '''
         self.new_user = User("James","+254")
+        self.new_account=account("Twitter","Tim42","twitter254")
 
     def test_init(self):
         '''
@@ -60,7 +61,40 @@ class TestUser(unittest.TestCase):
             self.assertEqual(found_user.user_name,"Test")
 
 
-    
+    def test_save_account(self):
+            '''
+            test_save_accounts test case to test if the accounts object is saved into
+            the credentials account list
+            '''
+            self.new_account.save_account() # saving the new account
+            self.assertGreater(len(Credentials.account),0)
+
+    def test_delete_account(self):
+            '''
+            test_delete_account to test if we can remove an account from accounts list
+            '''
+            self.new_account.save_account()
+            test_account = Credentials("Twitter","Tim42", "twitter254") # new account
+            test_account.save_account()
+
+            self.new_account.delete_account()# Deleting a account object
+            self.assertGreater(len(Credentials.account),0)
+
+        
+    def test_find_account_by_name(self):
+            '''
+            test to check if we can find an account by user name and display information
+            '''
+
+            self.new_account.save_account()
+            test_account = account("Twitter","Tim42","twitter254") 
+            test_account.save_account()
+
+            found_account = Credentials.find_account_by_name("Test")
+
+            self.assertEqual(found_account.account_name,"Test")
+
+
     
 
 if __name__ == '__main__':
