@@ -38,11 +38,8 @@ class User:
     def display_user(cls):
         '''
         method returns list of users
-        '''
-
-        for user in cls.user_list:
-            # if contact.phone_number == number:
-                return cls.user_list
+        '''     
+        return cls.user_list
 
 
 
