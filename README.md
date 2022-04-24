@@ -1,7 +1,7 @@
-# Password Manager
+# Password Generator
 ## By Sandra Dindi
 ## Description
-This is a Python application that allows a user to generate and store passwords for various accounts. The application runs on the terminal and the user navigates through the app by using short codes. <br/>
+This App that allows a user to generate and store passwords for various accounts. The application runs on the terminal and the user navigates through the app by using short codes. <br/>
 The short codes are:
 * CU - create Password Locker account
 * DU - display the names of the current Password Locker users
