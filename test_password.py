@@ -1,10 +1,10 @@
 
 import unittest
 from user import User
-from user import Credentials
+from credentials import Credentials
 
 '''
-import User and Credentials class from user.py file
+import User and Credentials class from class files
 '''
 
 class TestUser(unittest.TestCase):
@@ -16,7 +16,7 @@ class TestUser(unittest.TestCase):
         setup method to run before each test cases
         '''
         self.new_user = User("James","+254")
-        self.new_account=account("Twitter","Tim42","twitter254")
+        self.new_account=Credentials("Twitter","Tim42","twitter254")
 
     def test_init(self):
         '''
@@ -47,7 +47,7 @@ class TestUser(unittest.TestCase):
             self.assertGreater(len(User.user_list),0)
 
         
-    def test_find_by_name(self):
+    def test_find_user_by_name(self):
             '''
             test to check if we can find a user by user name and display information
             '''
@@ -56,7 +56,7 @@ class TestUser(unittest.TestCase):
             test_user = User("Test","user") # new user
             test_user.save_user()
 
-            found_user = User.find_by_name("Test")
+            found_user = User.find_user_by_name("Test")
 
             self.assertEqual(found_user.user_name,"Test")
 
@@ -83,16 +83,16 @@ class TestUser(unittest.TestCase):
         
     def test_find_account_by_name(self):
             '''
-            test to check if we can find an account by user name and display information
+            test to check if we can find an account by name of account and display information
             '''
 
             self.new_account.save_account()
-            test_account = account("Twitter","Tim42","twitter254") 
+            test_account = Credentials("Twitter","Tim42","twitter254") 
             test_account.save_account()
 
-            found_account = Credentials.find_account_by_name("Test")
+            found_account = Credentials.account_name(self)
 
-            self.assertEqual(found_account.account_name,"Test")
+            self.assertEqual(found_account.account_name,self)
 
 
     
