@@ -26,13 +26,12 @@ As a user I would like:
 | Log out | N/A | Log out of Password Manager account |
 
 ## Setup/Installation Requirements
-* Clone [this repository](git@github.com:Dindihub/Passwordgenerator.git) and run the `.\run.py` file.
-
+* Clone [this repository](git@github.com:Dindihub/Passwordgenerator.git) and run the `.\run.py` file
 
 ## Known Bugs
 No known bugs
 ## Technologies Used
 - Python3.8
 ### License
-MIT (c) 2020 **[Sandra Dindi](https://github.com/Dindihub/Passwordgenerator)**
+MIT (c) 2022 **[Sandra Dindi](https://github.com/Dindihub/Passwordgenerator)**
 
