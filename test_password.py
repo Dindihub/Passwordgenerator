@@ -2,6 +2,7 @@
 import unittest
 from user import User
 from credentials import Credentials
+import string
 
 '''
 import User and Credentials class from class files
@@ -25,6 +26,9 @@ class TestUser(unittest.TestCase):
 
         self.assertEqual(self.new_user.user_name,"James")
         self.assertEqual(self.new_user.user_password,"+254")
+        self.assertEqual(self.new_account.account_name,"Twitter")
+        self.assertEqual(self.new_account.account_username,"Tim42")
+        self.assertEqual(self.new_account.account_password,"twitter254")
 
 
     def test_save_user(self):
@@ -67,7 +71,7 @@ class TestUser(unittest.TestCase):
             the credentials account list
             '''
             self.new_account.save_account() # saving the new account
-            self.assertGreater(len(Credentials.account),0)
+            self.assertGreater(len(Credentials.accounts),0)
 
     def test_delete_account(self):
             '''
@@ -78,23 +82,29 @@ class TestUser(unittest.TestCase):
             test_account.save_account()
 
             self.new_account.delete_account()# Deleting a account object
-            self.assertGreater(len(Credentials.account),0)
+            self.assertGreater(len(Credentials.accounts),0)
 
         
     def test_find_account_by_name(self):
-            '''
-            test to check if we can find an account by name of account and display information
-            '''
+                '''
+                test to check if we can find an account by name of account and display information
+                '''
 
-            self.new_account.save_account()
-            test_account = Credentials("Twitter","Tim42","twitter254") 
-            test_account.save_account()
+                test_account = Credentials("Twitter","Tim42","twitter254") 
+                test_account.save_account()
+              
+                found_account = Credentials.find_account_by_name("Twitter")
 
-            found_account = Credentials.account_name(self)
-
-            self.assertEqual(found_account.account_name,self)
+                self.assertEqual(found_account.account_name,"Twitter")
 
 
+    def test_generate_password(self):
+                '''
+                Test method to test if a user can log into their credentials
+                '''
+        
+                generated_password = self.new_account.generate_password()
+                self.assertEqual(len(generated_password),8)   
     
 
 if __name__ == '__main__':
