@@ -51,12 +51,12 @@ class Credentials:
     Class that creates new instances of credentials
     ''' 
     account=[]
-    def __init__(self,account_username,account_name,account_password_):
+    def __init__(self,account_name,account_username,account_password_):
         '''
         defines properties for objectself
         ''' 
-        self.account_name=account_username
-        self.account_username=account_name
+        self.account_name=account_name
+        self.account_username=account_username
         self.account_password_=account_password_
 
     def save_account(self):
@@ -65,13 +65,13 @@ class Credentials:
         save_account method saves new instances of credentials
         ''' 
 
-        Credentials.accounts.append(self)
+        Credentials.account.append(self)
 
     def delete_account(self):
         '''
         delete_account method deletes credentials
         '''
-        Credentials.accounts.remove(self)
+        Credentials.account.remove(self)
 
     @classmethod
     def display_account(cls,name):
