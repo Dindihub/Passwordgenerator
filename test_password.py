@@ -85,7 +85,7 @@ class TestUser(unittest.TestCase):
             self.assertGreater(len(Credentials.accounts),0)
 
         
-    def test_find_account_by_name(self):
+    def test_find_account(self):
                 '''
                 test to check if we can find an account by name of account and display information
                 '''
@@ -93,7 +93,7 @@ class TestUser(unittest.TestCase):
                 test_account = Credentials("Twitter","Tim42","twitter254") 
                 test_account.save_account()
               
-                found_account = Credentials.find_account_by_name("Twitter")
+                found_account = Credentials.find_account("Twitter")
 
                 self.assertEqual(found_account.account_name,"Twitter")
 
