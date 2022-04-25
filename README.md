@@ -28,7 +28,7 @@ As a user I would like:
 | Log out | N/A | Log out of Password Manager account |
 
 ## Setup/Installation Requirements
-* Clone [this repository](git@github.com:Dindihub/Passwordgenerator.git) and run the `.\run.py` file
+Clone **[this repository](git@github.com:Dindihub/Passwordgenerator.git)** and run the `.\run.py` file
 
 ## Known Bugs
 No known bugs
