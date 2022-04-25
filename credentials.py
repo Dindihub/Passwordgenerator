@@ -29,7 +29,7 @@ class Credentials:
         Credentials.accounts.remove(self)
 
     @classmethod
-    def find_account_by_name(cls,account_name):
+    def find_account(cls,account_name):
         '''
         Method returns list of accounts
         '''
@@ -37,6 +37,13 @@ class Credentials:
         for account in cls.accounts:
             if account.account_name == account_name:
                 return account
+
+    @classmethod
+    def display_account(cls):
+        '''
+        method returns list of account
+        '''     
+        return cls.accounts
 
     @classmethod
     def generate_password(cls):
