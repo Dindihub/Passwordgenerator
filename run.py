@@ -62,7 +62,9 @@ def main():
             print("Choose password type ...Enter own password -OP- or Generate password -GP- ")
             password_option=input()
             if password_option == "OP":
-                user_password=input("Enter your password")
+                print("Enter your password")
+                user_password=input()
+                print('*'*10)
                 break
             elif password_option == "GP":
                 user_password = generate_password()
@@ -99,7 +101,8 @@ def main():
                 print("Choose password type ...Enter own password -OP- or Generate password -GP- ")
                 password_option=input()
                 if password_option == "OP":
-                    account_password=input("Enter your password")
+                    print("Enter your password")
+                    account_password=input()
                     break
                 elif password_option == "GP":
                     account_password = generate_password()
