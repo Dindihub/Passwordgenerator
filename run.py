@@ -136,6 +136,8 @@ def main():
             if find_account(find_credential):
                 find_credential=find_account(find_credential)
                 print(f"Account Name: {find_credential.account_name}")
+                print(f"Account userName: {find_credential.account_username}")
+                print(f"Account Password: {find_credential.account_password}")
                 print('*'*10)
                 print('\n')
             else:
