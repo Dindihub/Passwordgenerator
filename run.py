@@ -54,15 +54,15 @@ def main():
     option=input().upper()
 
     if option == "CU":
-        print("Create user account")
+        print("CREATE USER ACCOUNT")
         print('*'*10)
-        print("Enter your user name...")
+        print("ENTER YOUR USERNAME...")
         user_name=input()
         while True : 
-            print("Choose password type ...Enter own password -OP- or Generate password -GP- ")
+            print("To enter your own password use  -OP- or Generate new password -GP- ")
             password_option=input()
             if password_option == "OP":
-                print("Enter your password")
+                print("ENTER YOUR PASSWORD")
                 user_password=input()
                 print('*'*10)
                 break
@@ -70,56 +70,61 @@ def main():
                 user_password = generate_password()
                 break
             else:
-                print("Invalid choice")
+                print("Invalid choice!!!!!!. Please choose a short-code")
         # print("Enter your password...")
         # user_password=input()
         # print('*'*10)
         save_user(create_user(user_name,user_password))
-        print("Your account has been successfully created ")
+        print("YOUR ACCOUNT HAS BEEN SUCCESSFULLY CREATED!")
         print(f"name:{user_name},password:{user_password}")
         print('*'*10)
     elif option == "LG":
-        print("Enter username")
+        print("ENTER YOUR USERNAME")
         user_name = input()
-        print("Enter password")
+        print('\n')
+        print("ENTER YOUR PASSWORD")
         user_password= input()
         log_in = user_log_in(user_name,user_password)
+        print('\n')
 
     while True:
         # print("CC - create credential\n, D - display credential\n, FC-finedential\n,EX-exit credential account")
-        print (" Short-codes for navigation:\n CC - Create a new account\n LG - Log in to Application \n DC - Display account\n FC - Find account\n DLT - Delete credential \n EX - Exit application")
+        print (" Use these Short-codes to navigate through App :\n CC - Create a new account\n LG - Log in to Application \n DC - Display account\n FC - Find account\n DLT - Delete credential \n EX - Exit application")
+        print('\n')
         print('*'*10)
         option=input().upper()
         if  option == "CC":
-            print("Create new credentials")
+            print("CREATE NEW CREDENTIALS")
             print('*'*10)
-            print("Enter your account name...")
+            print("ENTER YOUR ACCOUNT NAME...")
             account_name=input()
-            print("Enter your account username...")
+            print("ENTER YOUR USERNAME...")
             account_username=input()
             while True : 
-                print("Choose password type ...Enter own password -OP- or Generate password -GP- ")
+                print("To enter your own password use  -OP- or Generate new password -GP- ")
                 password_option=input()
                 if password_option == "OP":
-                    print("Enter your password")
+                    print("ENTER YOUR PASSWORD")
                     account_password=input()
                     break
                 elif password_option == "GP":
                     account_password = generate_password()
                     break
                 else:
-                    print("Invalid choice")
+                    print('\n')
+                    print("INVALID CHOICE")
+                    print('\n')
             # print("Enter your account password...")
             # account_password=input()
             print('*'*10)
             save_account(create_account(account_name,account_username,account_password))
-            print("Your account has been successfully created")
+            print("YOUR ACCOUNT HAS BEEN SUCCESSFULLY CREATED")
             print(f"Account Name:{account_name}\n Account Username:{account_username} \n Account Password:{account_password}")
             print('*'*10)
             print('\n')
         elif option == "DC":
                 if display_account():
-                    print("Display your credentials")
+                    print("DISPLAY YOUR CREDENTIALS")
                     for credentials in display_account():
                         print(f"Account Name: {credentials.account_name}\n Account Username: {credentials.account_username} \n Account Password: {credentials.account_password}")
                         print('*'*10)
@@ -128,13 +133,13 @@ def main():
         
                 else:
                     print('\n')
-                    print("You don't seem to have any credentials saved yet")
+                    print("YOU DO NOT SEEM TO HAVE AN ACCOUNT YET.TYPE CC TO CREATE ONE")
                     print('\n')
                     print('*'*10)
                     print('\n')
 
         elif option == "FC":
-            print("Find a credential by entering the account name")
+            print("FIND ACCOUNT BY ENTERING AN ACCOUNT NAME")
             find_credential=input()
             if find_account(find_credential):
                 find_credential=find_account(find_credential)
@@ -144,29 +149,33 @@ def main():
                 print('*'*10)
                 print('\n')
             else:
-                print("Account does not exist")
-                print('*'*10)
+                print('\n')
+                print("ACCOUNT DOES NOT EXIST!")
+                print('\n')
+            
 
         elif option == "DLT":
-            print("Delete credential by account name")
+            print("DELETE ACCOUNT BY ACCOUNT NAME")
             find_credential=input()
             if find_account(find_credential):
                 find_credential=find_account(find_credential)
                 find_credential.delete_account()
-                print(f"Account Name:{find_credential.account_name} deleted successfully")
+                print(f"Account Name:{find_credential.account_name} DELETED SUCCESSFULLY")
                 print('*'*10)
             else:
                 print('\n')
-                print("The credential does not exist")
+                print("THIS ACCOUNT DOES NOT EXIST")
                 print('*'*10)
                 print('\n')
 
         elif option == "EX":
-            print("Bye!")
+            print("BYE!")
             break
 
         else:
-            print("Please pick the correct codes")
+            print('\n')
+            print("PLEASE PICK THE RIGHT CODES")
+            print('\n')
 
          
 
